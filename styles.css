@@ -52,3 +52,11 @@ footer {
     color: white;
     padding: 10px;
 }
+
+.cert-img {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+}
