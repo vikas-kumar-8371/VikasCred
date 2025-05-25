@@ -24,6 +24,29 @@ h2 {
     border-radius: 10px;
 }
 
+.cert-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cert-item {
+    background-color: #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.cert-item a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+.cert-item a:hover {
+    color: blue;
+}
+
 footer {
     background-color: #222;
     color: white;
