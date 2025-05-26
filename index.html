@@ -4,135 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Professional Portfolio</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { font-family: Arial, sans-serif; scroll-behavior: smooth; }
-
-    header {
-      background: #0d1b2a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .about {
-      color: white;
-      background: url('images/profile_photo.jpg') center/cover no-repeat;
-      height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-    }
-
-    .about h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      max-width: 700px;
-      background-color: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .certifications {
-      background: #f2f2f2;
-      text-align: center;
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .cert-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .pagination {
-      margin-top: 20px;
-    }
-
-    .pagination button {
-      margin: 0 5px;
-      padding: 8px 16px;
-      border: none;
-      background: #0077cc;
-      color: white;
-      cursor: pointer;
-    }
-
-    .visa {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .visa img {
-      max-width: 400px;
-      border-radius: 10px;
-    }
-
-    .visa-description {
-      max-width: 600px;
-    }
-
-    footer {
-      background: #0d1b2a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-  <h1>My Professional Portfolio</h1>
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#visa">Visa Info</a>
-  </nav>
+  <div class="container">
+    <h1 class="logo">My Portfolio</h1>
+    <nav id="navMenu">
+      <a href="#about">About Me</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#visa">Visa Info</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
 </header>
 
 <section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    I am a DevOps Engineer with experience in automating infrastructure, CI/CD pipelines, and cloud-native solutions.
-    I specialize in tools such as Docker, Kubernetes, Jenkins, Terraform, AWS, and more. My passion lies in creating
-    scalable and efficient deployment pipelines while ensuring system reliability.
-  </p>
+  <div class="content-box">
+    <h2>About Me</h2>
+    <p>
+      I am a DevOps Engineer with experience in automating infrastructure, CI/CD pipelines, and cloud-native solutions.
+      I specialize in tools such as Docker, Kubernetes, Jenkins, Terraform, AWS, and more. My passion lies in creating
+      scalable and efficient deployment pipelines while ensuring system reliability.
+    </p>
+  </div>
 </section>
 
 <section id="certifications" class="certifications">
   <h2>Certifications</h2>
-  <div class="cert-grid" id="certGrid">
-    <!-- Certifications will be loaded via JS -->
-  </div>
-  <div class="pagination" id="pagination">
-    <!-- Buttons will be injected here -->
-  </div>
+  <div class="cert-grid" id="certGrid"></div>
+  <div class="pagination" id="pagination"></div>
 </section>
 
 <section id="visa" class="visa">
@@ -151,50 +53,6 @@
   <p>© 2025 My Portfolio | All rights reserved.</p>
 </footer>
 
-<script>
-  // Sample image list for certs
-  const certImages = [
-    'certifications/Python_Automation.jpg',
-    'certifications/GitLab CI-CD.jpg',
-    'certifications/Jenkins CI Tool.jpg',
-    'certifications/Docker.jpg',
-    'certifications/Terraform.jpg',
-    'certifications/AI For Everyone.jpg',
-    'certifications/Agile with Atlassian Jira.jpg',
-    'certifications/DevOps Project.jpg'
-  ];
-
-  const itemsPerPage = 4;
-  let currentPage = 1;
-
-  function displayCertifications() {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const certGrid = document.getElementById("certGrid");
-    certGrid.innerHTML = '';
-
-    certImages.slice(startIndex, startIndex + itemsPerPage).forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      certGrid.appendChild(img);
-    });
-
-    const totalPages = Math.ceil(certImages.length / itemsPerPage);
-    const pagination = document.getElementById("pagination");
-    pagination.innerHTML = '';
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement("button");
-      btn.textContent = i;
-      if (i === currentPage) btn.style.background = '#005fa3';
-      btn.onclick = () => {
-        currentPage = i;
-        displayCertifications();
-      };
-      pagination.appendChild(btn);
-    }
-  }
-
-  window.onload = displayCertifications;
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
