@@ -46,7 +46,7 @@
 <section id="visa" class="visa">
   <div class="visa-container">
     <div class="visa-image">
-      <img src="images/Nonimmigrant_Visa.jpg" alt="Visa Document">
+        <img src="images/Nonimmigrant_Visa.jpg" alt="Visa Document" onclick="openLightbox(this.src)">
     </div>
     <div class="visa-description">
       <h2>USA Working VISA</h2>
@@ -65,5 +65,11 @@
 </footer>
 
 <script src="js/script.js"></script>
+<!-- Lightbox Container -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded View">
+</div>
+
 </body>
 </html>

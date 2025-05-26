@@ -26,6 +26,7 @@ function displayCertifications() {
   certImages.slice(startIndex, startIndex + itemsPerPage).forEach(src => {
     const img = document.createElement("img");
     img.src = src;
+    img.onclick = () => openLightbox(src);
     certGrid.appendChild(img);
   });
 
@@ -46,3 +47,22 @@ function displayCertifications() {
 }
 
 window.onload = displayCertifications;
+
+// Lightbox functionality
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = src;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+// Close lightbox on ESC key
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
