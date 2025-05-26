@@ -1,67 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { font-family: Arial, sans-serif; scroll-behavior: smooth; }
+
+    header {
+      background: #0d1b2a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .about {
+      color: white;
+      background: url('images/profile_photo.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .about h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .certifications {
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .cert-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .pagination {
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      border: none;
+      background: #0077cc;
+      color: white;
+      cursor: pointer;
+    }
+
+    .visa {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .visa img {
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .visa-description {
+      max-width: 600px;
+    }
+
+    footer {
+      background: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>DevOps Engineer | Cloud Expert | Automation Specialist</p>
-    </header>
+<header>
+  <h1>My Professional Portfolio</h1>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#visa">Visa Info</a>
+  </nav>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-            <p>Welcome! I'm Vikas, a passionate DevOps Engineer dedicated to streamlining development workflows, optimizing infrastructure, and ensuring seamless software deployments. With expertise in CI/CD pipelines, cloud computing, containerization, and automation, I specialize in building efficient, scalable, and resilient systems that drive innovation and reliability.</p><br><p>
-            Through my certifications and hands-on experience, I've honed my skills in Linux, Docker, Kubernetes, AWS, Terraform, and more, enabling businesses to accelerate their software delivery while maintaining high performance and security. Whether it's automating infrastructure provisioning, optimizing deployment strategies, or enhancing system monitoring, I thrive on solving complex challenges and driving efficiency.</p><br><p></p>
-            Beyond tech, I enjoy exploring emerging cloud technologies, collaborating with development teams, and continuously learning to stay ahead in this ever-evolving industry. </p><br><p>Feel free to explore my certifications and professional accomplishments—I’m always eager to contribute to impactful projects and innovations!.</p>
-    </section>
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a DevOps Engineer with experience in automating infrastructure, CI/CD pipelines, and cloud-native solutions.
+    I specialize in tools such as Docker, Kubernetes, Jenkins, Terraform, AWS, and more. My passion lies in creating
+    scalable and efficient deployment pipelines while ensuring system reliability.
+  </p>
+</section>
 
-    <section id="certifications">
-        <h2>My Certifications</h2>
-        <div class="cert-grid">
-            <div>
-                <img class="cert-img" src="certifications/Python_Automation.jpg" alt="Python Automation">
-                <p>Python Automation Testing With Pytest</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/GitLab CI-CD.jpg" alt="GitLab">
-                <p>GitLab CI/CD</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/Jenkins CI Tool.jpg" alt="Jenkins">
-                <p>Jenkins CI/CD</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/Docker.jpg" alt="Docker">
-                <p>Docker Containers</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/Terraform.jpg" alt="Terraform">
-                <p>Hashicop Terraform</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/AI For Everyone.jpg" alt="AI">
-                <p>Artificial Intelligence</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/Agile with Atlassian Jira.jpg" alt="Jira">
-                <p>Agile with Atlassian Jira</p>
-            </div>
-            <div>
-                <img class="cert-img" src="certifications/DevOps Project.jpg" alt="Devops project">
-                <p>DevOps Project</p>
-            </div>
-        </div>
-    </section>
+<section id="certifications" class="certifications">
+  <h2>Certifications</h2>
+  <div class="cert-grid" id="certGrid">
+    <!-- Certifications will be loaded via JS -->
+  </div>
+  <div class="pagination" id="pagination">
+    <!-- Buttons will be injected here -->
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Vikas. All rights reserved.</p>
-    </footer>
+<section id="visa" class="visa">
+  <img src="images/visa.jpg" alt="Visa Document"/>
+  <div class="visa-description">
+    <h2>USA H1B Work Visa</h2>
+    <p>
+      The H-1B is a non-immigrant visa that allows U.S. companies to employ foreign workers in specialty occupations
+      that require theoretical or technical expertise. The visa is valid for three years, extendable to six years, and
+      often leads to a path for permanent residency. It requires employer sponsorship and is subject to an annual cap.
+    </p>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<footer>
+  <p>© 2025 My Portfolio | All rights reserved.</p>
+</footer>
+
+<script>
+  // Sample image list for certs
+  const certImages = [
+    'certifications/Python_Automation.jpg',
+    'certifications/GitLab CI-CD.jpg',
+    'certifications/Jenkins CI Tool.jpg',
+    'certifications/Docker.jpg',
+    'certifications/Terraform.jpg',
+    'certifications/AI For Everyone.jpg',
+    'certifications/Agile with Atlassian Jira.jpg',
+    'certifications/DevOps Project.jpg'
+  ];
+
+  const itemsPerPage = 4;
+  let currentPage = 1;
+
+  function displayCertifications() {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const certGrid = document.getElementById("certGrid");
+    certGrid.innerHTML = '';
+
+    certImages.slice(startIndex, startIndex + itemsPerPage).forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      certGrid.appendChild(img);
+    });
+
+    const totalPages = Math.ceil(certImages.length / itemsPerPage);
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === currentPage) btn.style.background = '#005fa3';
+      btn.onclick = () => {
+        currentPage = i;
+        displayCertifications();
+      };
+      pagination.appendChild(btn);
+    }
+  }
+
+  window.onload = displayCertifications;
+</script>
+
 </body>
 </html>
