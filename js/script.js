@@ -12,7 +12,12 @@ const certImages = [
     'certifications/Terraform.jpg',
     'certifications/AI For Everyone.jpg',
     'certifications/Agile with Atlassian Jira.jpg',
-    'certifications/DevOps Project.jpg'
+    'certifications/DevOps Project.jpg',
+    'certifications/Google Cloud Platform (GCP) Fundamentals.jpg',
+    'certifications/Data Structures and Algorithm.jpg',
+    'certifications/Successful Presentation.jpg',
+    'certifications/The Git & Github Bootcamp.jpg',
+    'certifications/SQL Server.jpg'
 ];
 
 const itemsPerPage = 4;
